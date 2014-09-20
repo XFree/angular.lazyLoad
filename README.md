@@ -1,8 +1,8 @@
 angular.lazyLoad
 ================
   
-lazyLoad module for angularjs
-In order to add dynamic loading of modules for angularjs, then Ba is necessary to:  
+lazyLoad module for angularjs  
+In order to add dynamic loading of modules for angularjs, then you need to:   
 
 1. to find the line:  
   `forEach(loadModules(modulesToLoad), function(fn) { instanceInjector.invoke(fn || noop); });`
