@@ -21,26 +21,22 @@ If you add this code:
 in:       
  `return ensure(angular, 'module', function() {  
  /** @type {Object.<string, angular.Module>} */  
-    var modules = {};`    
+    var modules = {};`  
+        
 You can write modules to add to the current application:  
-example code:  
-`
-var _aBeforeInject = angular.extend({}, angular.modules),
-    _aInjectModules = [];
-...
-You load modules code
-...
-
-angular.forEach(angular.modules, function(value, key){
-   if (!_aBeforeInject.hasOwnProperty(key)){
-     _aInjectModules.push(key);
-   }
-});
-
-
-//inject new modules
-$injector.injectModules(_aInjectModules);
-`
+ example code:  
+ `var _aBeforeInject = angular.extend({}, angular.modules),
+     _aInjectModules = [];
+ //...                    
+ //You load modules code  
+ //...                    
+ angular.forEach(angular.modules, function(value, key){
+    if (!_aBeforeInject.hasOwnProperty(key)){          
+      _aInjectModules.push(key);
+    }
+ });
+ //inject new modules
+ $injector.injectModules(_aInjectModules);`
 
 enjoy.  =)
 
