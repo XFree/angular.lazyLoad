@@ -12,3 +12,35 @@ In order to add dynamic loading of modules for angularjs, then you need to:
   };`  
   `instanceInjector.injectModules(modulesToLoad);`  
 3. upload files with the modules in any way possible (eg requirejs) and call a method injectModules in service $injector
+
+If you add this code:  
+ `//angular patch fro get modules.
+     ensure(angular, 'modules', function(){
+        return modules;
+     });`  
+in:       
+ `return ensure(angular, 'module', function() {  
+ /** @type {Object.<string, angular.Module>} */  
+    var modules = {};`    
+You can write modules to add to the current application:  
+example code:  
+`
+var _aBeforeInject = angular.extend({}, angular.modules),
+    _aInjectModules = [];
+...
+You load modules code
+...
+
+angular.forEach(angular.modules, function(value, key){
+   if (!_aBeforeInject.hasOwnProperty(key)){
+     _aInjectModules.push(key);
+   }
+});
+
+
+//inject new modules
+$injector.injectModules(_aInjectModules);
+`
+
+enjoy.  =)
+
