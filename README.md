@@ -1,6 +1,9 @@
 angular.lazyLoad
 ================
   
+[https://github.com/XFree/angular.js/commit/3f22596bc342abd856d7300380969b7cfe8f9c61](https://github.com/XFree/angular.js/commit/3f22596bc342abd856d7300380969b7cfe8f9c61 "lazyLoad Commit")
+
+
 lazyLoad module for angularjs  
 In order to add dynamic loading of modules for angularjs, then you need to:   
 
